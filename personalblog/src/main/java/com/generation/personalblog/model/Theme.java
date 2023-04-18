@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "tb_theme")
+@Table(name = "tb_themes")
 public class Theme {
 
     @Id
