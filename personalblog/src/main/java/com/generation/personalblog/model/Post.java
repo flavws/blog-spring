@@ -30,6 +30,10 @@ public class Post {
     @ManyToOne
     @JsonIgnoreProperties("post")
     private Theme theme;
+
+    @ManyToOne
+    @JsonIgnoreProperties("post")
+    private User user;
     public Long getId() {
         return id;
     }
@@ -60,6 +64,22 @@ public class Post {
 
     public void setDate(LocalDateTime date) {
         this.date = date;
+    }
+
+    public Theme getTheme() {
+        return theme;
+    }
+
+    public void setTheme(Theme theme) {
+        this.theme = theme;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 
