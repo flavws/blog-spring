@@ -22,6 +22,7 @@ public class User {
 
     @NotNull(message = "O usuário é obrigatório!")
     @Email(message = "O usuário deve ser um e-mail válido!")
+    @Column(name="username")
     private String user;
 
     @NotBlank(message = "A senha é obrigatória!")
@@ -34,6 +35,17 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("user")
     private List<Post> posts;
+
+    public User(Long id, String name, String user, String password, String picture) {
+        this.id = id;
+        this.name = name;
+        this.user = user;
+        this.password = password;
+        this.picture = picture;
+    }
+
+    public User() {
+    }
 
     public Long getId() {
         return id;

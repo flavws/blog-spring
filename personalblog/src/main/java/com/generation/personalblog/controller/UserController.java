@@ -47,7 +47,7 @@ public class UserController {
     }
 
 
-    @PostMapping("/cadastrar")
+    @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody @Valid User user) {
 
         return userService.createUser(user)
@@ -56,7 +56,7 @@ public class UserController {
 
     }
 
-    @PutMapping("/atualizar")
+    @PutMapping("/update")
     public ResponseEntity<User> updateUser(@Valid @RequestBody User user) {
 
         return userService.updateUser(user)
