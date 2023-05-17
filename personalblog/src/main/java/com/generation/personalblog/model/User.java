@@ -1,6 +1,7 @@
 package com.generation.personalblog.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -23,6 +24,7 @@ public class User {
     @NotNull(message = "O usuário é obrigatório!")
     @Email(message = "O usuário deve ser um e-mail válido!")
     @Column(name="username")
+    @Schema(example = "email@email.com.br")
     private String user;
 
     @NotBlank(message = "A senha é obrigatória!")
